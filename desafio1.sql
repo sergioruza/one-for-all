@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE SpotifyClone.planos(
+CREATE TABLE planos(
 	planos_id INT PRIMARY KEY AUTO_INCREMENT,
     planos VARCHAR(45),
     valor DECIMAL(5, 2)
@@ -17,7 +17,7 @@ VALUES
     ('pessoal', 6.99);
 
 
-CREATE TABLE SpotifyClone.usuario(
+CREATE TABLE usuario(
 	usuario_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
     idade INT NOT NULL,
@@ -39,7 +39,7 @@ VALUES
 ('Jorge Amado', 58, 4, '2017-02-17');
 
 
-CREATE TABLE SpotifyClone.artista(
+CREATE TABLE artista(
 	artista_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL
 );
@@ -52,7 +52,7 @@ VALUES
 ('Blind Guardian'),
 ('Nina Simone');
 
-CREATE TABLE SpotifyClone.seguindo_artistas(
+CREATE TABLE seguindo_artistas(
 	usuario_id INT,
     artista_id INT,
     PRIMARY KEY (usuario_id, artista_id),
@@ -76,7 +76,7 @@ VALUES
 (9, 3),
 (10, 2);
 
-CREATE TABLE SpotifyClone.album(
+CREATE TABLE album(
 	album_id INT PRIMARY KEY AUTO_INCREMENT,
     album VARCHAR(45),
     ano_lancamento INT,
@@ -95,7 +95,7 @@ VALUES
 ('I Put A Spell On You', 2012, 6);
 
 
-CREATE TABLE SpotifyClone.cancoes(
+CREATE TABLE cancoes(
 	cancoes_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
     duracao INT NOT NULL,
@@ -118,7 +118,7 @@ VALUES
 ('Feeling Good', 100, 6, 6);
 
 
-CREATE TABLE SpotifyClone.historico(
+CREATE TABLE historico(
     usuario_id INT,
     cancoes_id INT,
     data_hist DATETIME,
