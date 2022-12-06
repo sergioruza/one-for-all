@@ -1,2 +1,3 @@
-SELECT COUNT(*) AS quantidade_musicas_no_historico FROM SpotifyClone.historico
-WHERE usuario_id = 1;
+SELECT count(cancoes_id) FROM SpotifyClone.historico AS hist
+INNER JOIN SpotifyClone.usuario as us ON hist.usuario_id = us.usuario_id
+WHERE us.nome = 'Barbara Liskov';
